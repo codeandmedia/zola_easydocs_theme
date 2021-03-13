@@ -1,0 +1,12 @@
+base_url = "https://example.com"
+title = "Docs"
+compile_sass = true
+build_search_index = true
+
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-light"
+
+[extra]
+logo = "https://logoipsum.com/logo/logo-11.svg"
+release = "https://api.github.com/repos/getzola/zola/releases/latest"
