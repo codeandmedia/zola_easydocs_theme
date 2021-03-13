@@ -1,4 +1,4 @@
-base_url = "https://example.com"
+base_url = "https://easydocs.codeandmedia.com"
 title = "Docs"
 compile_sass = true
 build_search_index = true
