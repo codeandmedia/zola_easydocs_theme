@@ -10,3 +10,4 @@ highlight_theme = "base16-ocean-light"
 [extra]
 logo = "https://logoipsum.com/logo/logo-11.svg"
 release = "https://api.github.com/repos/getzola/zola/releases/latest"
+favicon = "https://www.getzola.org/favicon.ico"

@@ -89,7 +89,6 @@ pre {
 
  code {
     font: $code_font;
-    background: #eff1f5;
   }
 
   .copy-code-button {
@@ -332,6 +331,10 @@ article {
     width:100vw;
     z-index:10;
     box-shadow: 0 2px 0 rgba(0,0,0,.1);
+  }
+
+  #on_right {
+    margin-top:$baseline;
   }
 }
 

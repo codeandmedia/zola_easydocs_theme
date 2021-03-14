@@ -1,8 +1,3 @@
-+++
-title = "index"
-insert_anchor_links = "right"
-+++
-
 ## An easy way to create a document library for your project
 
 Demo: [https://easydocs.codeandmedia.com/](https://easydocs.codeandmedia.com/)

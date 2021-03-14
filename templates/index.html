@@ -3,9 +3,15 @@
     <head>
       <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
+      {% if config.extra.favicon %}
+        <link rel="icon" href="{{ config.extra.favicon | safe }}">
+      {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <title>{% block title %}{{ config.title }}{% endblock title %}</title> 
     </head>
     <body>
 
+      {% if config.extra.release %}
     <script>
          fetch('{{ config.extra.release | safe }}')
           .then((response) => {
@@ -17,7 +23,7 @@
             release.innerHTML = `<a href='${html_url}'>${release_name}</a>`;
           });
     </script>
-
+      {% endif %}
     <main>
 
       {% block nav %}
@@ -53,8 +59,8 @@
                         
         <ul class="subtree">
                 {% for page in subsection.pages %}
-                                <li class="{% if current_path == page.path %}active{% endif %}">
-                                    <a href="{{page.permalink}}">{{page.title}}</a>
+                                <li {% if current_path == page.path %}class="active"{% endif %}>
+                                    <a href="{{page.permalink | safe }}">{{page.title}}</a>
                                 </li>
 
                             {% if current_path == page.path %} 
@@ -80,20 +86,19 @@
             <li><a href="{{ h3.permalink | safe }}">{{ h3.title }}</a></li>
             {% endfor %}
          </ul>
-  {% endif %}
+    {% endif %}
         </li>
-  {% endfor %}
+    {% endfor %}
       </ul>
-  {% endif %}
+    {% endif %}
 
                         
-{% endif %}
-
-                                
-                {% endfor %}
-        </ul>         
-                {% endfor %}
-              </div>    </nav>
+    {% endif %}
+    {% endfor %}
+    </ul>         
+    {% endfor %}
+    </div>    
+  </nav>
     {% endblock nav %}
 
 <article>
@@ -111,25 +116,20 @@
     </div>
   {% endif %}       
 
-<div id="wrap">
-{% block content %}
-
-
-    {{ section.content | safe }}
-
-{% endblock content %}
-</div>
+  <div id="wrap">
+    {% block content %}
+      {{ section.content | safe }}
+    {% endblock content %}
+  </div>
 
 </article>
+</main>
 
-
-</main> 
-
-{% if config.build_search_index %}
-<script type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") | safe }}"></script>
-<script type="text/javascript" src="{{ get_url(path="search_index.en.js") | safe }}"></script>
-<script type="text/javascript" src="{{ get_url(path="js.js") | safe }}" defer></script>
-{% endif %}
+  {% if config.build_search_index %}
+  <script type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") | safe }}" defer></script>
+  <script type="text/javascript" src="{{ get_url(path="search_index.en.js") | safe }}" defer></script>
+  <script type="text/javascript" src="{{ get_url(path="js.js") | safe }}" defer></script>
+  {% endif %}
 
 </body>
 </html>
