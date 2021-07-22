@@ -33,7 +33,7 @@
             {% if current_path == "/" %}
             <img src="{{ config.extra.logo | safe }}" alt="" />
 
-            {% else %}<a href="/">
+            {% else %}<a href="{{ config.base_url }}">
             <img src="{{ config.extra.logo | safe }}" alt="" />
                 </a>
             {% endif %}
