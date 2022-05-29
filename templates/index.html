@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
     {% if config.extra.favicon %}
-        <link rel="icon" href="{{ config.extra.favicon | safe }}">
+        <link rel="icon" href="{{ get_url(path=config.extra.favicon) | safe }}">
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
@@ -31,10 +31,10 @@
         <nav>
             {% if config.extra.logo %}
                 {% if current_path == "/" %}
-                    <img src="{{ config.extra.logo | safe }}" alt=""/>
+                    <img src="{{ get_url(path=config.extra.logo) | safe }}" alt=""/>
 
                 {% else %}<a href="{{ config.base_url }}">
-                    <img src="{{ config.extra.logo | safe }}" alt=""/>
+                    <img src="{{ get_url(path=config.extra.logo) | safe }}" alt=""/>
                 </a>
                 {% endif %}
 
