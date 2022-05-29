@@ -48,8 +48,8 @@
 
             <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
             <div id="trees">
-                {% set section = get_section(path="_index.md") %}
-                {% for p in section.subsections %}
+                {% set section_ = get_section(path="_index.md") %}
+                {% for p in section_.subsections %}
                     {% set subsection = get_section(path=p) %}
 
 
