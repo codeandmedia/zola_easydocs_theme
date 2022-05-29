@@ -30,7 +30,7 @@
 
         <nav>
             {% if config.extra.logo %}
-                {% if current_path == "/" %}
+                {% if current_path == "/" and not config.extra.easydocs_logo_always_clickable %}
                     <img src="{{ get_url(path=config.extra.logo) | safe }}" alt=""/>
 
                 {% else %}<a href="{{ config.base_url }}">
