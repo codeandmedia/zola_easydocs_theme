@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
-    {% if config.extra.favicon %}
-        {% set _favicon = config.extra.favicon %}
-        {% if (_favicon is starting_with("http")) == false %}
-            {% set _favicon = get_url(path=config.extra.favicon) %}
-        {% endif %}
+    {% if config.extra.favicon -%}
+        {% set _favicon = config.extra.favicon -%}
+        {% if (_favicon is starting_with("http")) == false -%}
+            {% set _favicon = get_url(path=config.extra.favicon) -%}
+        {% endif -%}
         <link rel="icon" href="{{ _favicon | safe }}">
-    {% endif %}
+    {% endif -%}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 </head>
 <body>
 
-{% if config.extra.release %}
+{% if config.extra.release -%}
     <script>
         fetch('{{ config.extra.release | safe }}')
             .then((response) => {
@@ -27,37 +27,38 @@
                 release.innerHTML = `<a href='${html_url}'>${release_name}</a>`;
             });
     </script>
-{% endif %}
+{% endif -%}
 <main>
 
-    {% block nav %}
+    {% block nav -%}
 
         <nav>
-            {% if config.extra.logo %}
-                {% set _logo = config.extra.logo %}
-                {% if (_logo is starting_with("http")) == false %}
-                    {% set _logo = get_url(path=config.extra.logo) %}
-                {% endif %}
-                {% if current_path == "/" and not config.extra.easydocs_logo_always_clickable %}
+            {% if config.extra.logo -%}
+                {% set _logo = config.extra.logo -%}
+                {% if (_logo is starting_with("http")) == false -%}
+                    {% set _logo = get_url(path=config.extra.logo) -%}
+                {% endif -%}
+                {% if current_path == "/" and not config.extra.easydocs_logo_always_clickable -%}
                     <img src="{{ _logo | safe }}" alt=""/>
-                {% else %}<a href="{{ config.base_url }}">
-                    <img src="{{ _logo | safe }}" alt=""/>
-                </a>
-                {% endif %}
+                {% else -%}
+                    <a href="{{ config.base_url }}">
+                        <img src="{{ _logo | safe }}" alt=""/>
+                    </a>
+                {% endif -%}
 
-            {% else %}
+            {% else -%}
                 <h1><a href="{{ config.base_url }}">{{ config.title }}</a></h1>
-            {% endif %}
+            {% endif -%}
 
-            {% if config.extra.release %}
+            {% if config.extra.release -%}
                 <div id="release"></div>
-            {% endif %}
+            {% endif -%}
 
             <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
             <div id="trees">
-                {% set section_ = get_section(path="_index.md") %}
-                {% for p in section_.subsections %}
-                    {% set subsection = get_section(path=p) %}
+                {% set section_ = get_section(path="_index.md") -%}
+                {% for p in section_.subsections -%}
+                    {% set subsection = get_section(path=p) -%}
 
 
                     <input class="tree-toggle" type="checkbox" id="{{ subsection.title | slugify }}"
@@ -66,56 +67,56 @@
                            for="{{ subsection.title | slugify }}">{{ subsection.title }}</label>
 
                     <ul class="subtree">
-                        {% for page in subsection.pages %}
+                        {% for page in subsection.pages -%}
                             <li {% if current_path == page.path %}class="active"{% endif %}>
                                 <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
                             </li>
 
-                            {% if page.toc %}
+                            {% if page.toc -%}
 
-                                {% if current_path == page.path %}
+                                {% if current_path == page.path -%}
 
-                                    {% set_global header_count = 0 %}
-                                    {% for h2 in page.toc %}
-                                        {% set_global header_count = header_count + 1 %}
-                                        {% for h3 in h2.children %}
-                                            {% set_global header_count = header_count + 1 %}
-                                            {% for h4 in h3.children %}
-                                                {% set_global header_count = header_count + 1 %}
-                                            {% endfor %}
-                                        {% endfor %}
-                                    {% endfor %}
+                                    {% set_global header_count = 0 -%}
+                                    {% for h2 in page.toc -%}
+                                        {% set_global header_count = header_count + 1 -%}
+                                        {% for h3 in h2.children -%}
+                                            {% set_global header_count = header_count + 1 -%}
+                                            {% for h4 in h3.children -%}
+                                                {% set_global header_count = header_count + 1 -%}
+                                            {% endfor -%}
+                                        {% endfor -%}
+                                    {% endfor -%}
 
-                                    {% if header_count > 4 %}
+                                    {% if header_count > 4 -%}
                                         <ul id="toc">
-                                            {% for h2 in page.toc %}
+                                            {% for h2 in page.toc -%}
                                                 <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
-                                                    {% if h2.children %}
+                                                    {% if h2.children -%}
                                                         <ul>
-                                                            {% for h3 in h2.children %}
+                                                            {% for h3 in h2.children -%}
                                                                 <li>
                                                                     <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
                                                                 </li>
-                                                            {% endfor %}
+                                                            {% endfor -%}
                                                         </ul>
-                                                    {% endif %}
+                                                    {% endif -%}
                                                 </li>
-                                            {% endfor %}
+                                            {% endfor -%}
                                         </ul>
-                                    {% endif %}
+                                    {% endif -%}
 
-                                {% endif %}
-                            {% endif %}
-                        {% endfor %}
+                                {% endif -%}
+                            {% endif -%}
+                        {% endfor -%}
                     </ul>
-                {% endfor %}
+                {% endfor -%}
             </div>
         </nav>
-    {% endblock nav %}
+    {% endblock nav -%}
 
     <article>
 
-        {% if config.build_search_index %}
+        {% if config.build_search_index -%}
             <div id="on_right">
                 <span id="search-ico" class="ms-Icon--Search"></span>
             </div>
@@ -126,10 +127,10 @@
                     <ul class="search-results__items"></ul>
                 </div>
             </div>
-        {% endif %}
+        {% endif -%}
 
         <div id="wrap">
-            {% block content %}
+            {% block content -%}
                 {{ section.content | safe }}
             {% endblock content %}
         </div>
@@ -141,7 +142,7 @@
     <script type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") | safe }}" defer></script>
     <script type="text/javascript" src="{{ get_url(path="search_index.en.js") | safe }}" defer></script>
     <script type="text/javascript" src="{{ get_url(path="js.js") | safe }}" defer></script>
-{% endif %}
+{% endif -%}
 
 </body>
 </html>

@@ -2,21 +2,20 @@
 
 {% block title %} {{ config.title }} | {{ section.title }} {% endblock title %}
 
-
 {% block content %}
-    {% if section.word_count > 0 %}
+    {% if section.word_count > 0 -%}
         {{ section.content }}
-    {% else %}
+    {% else -%}
         <h1 class="title">
             {{ section.title }}
         </h1>
         Pages:
         <ul>
-            {% for page in section.pages %}
+            {% for page in section.pages -%}
                 <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-            {% endfor %}
+            {% endfor -%}
         </ul>
-    {% endif %}
+    {% endif -%}
 {% endblock content %}
 
 
