@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
     {% if config.extra.favicon %}
-        <link rel="icon" href="{{ get_url(path=config.extra.favicon) | safe }}">
+        {% set _favicon = config.extra.favicon %}
+        {% if (_favicon is starting_with("http")) == false %}
+            {% set _favicon = get_url(path=config.extra.favicon) %}
+        {% endif %}
+        <link rel="icon" href="{{ _favicon | safe }}">
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
@@ -30,11 +34,14 @@
 
         <nav>
             {% if config.extra.logo %}
+                {% set _logo = config.extra.logo %}
+                {% if (_logo is starting_with("http")) == false %}
+                    {% set _logo = get_url(path=config.extra.logo) %}
+                {% endif %}
                 {% if current_path == "/" and not config.extra.easydocs_logo_always_clickable %}
-                    <img src="{{ get_url(path=config.extra.logo) | safe }}" alt=""/>
-
+                    <img src="{{ _logo | safe }}" alt=""/>
                 {% else %}<a href="{{ config.base_url }}">
-                    <img src="{{ get_url(path=config.extra.logo) | safe }}" alt=""/>
+                    <img src="{{ _logo | safe }}" alt=""/>
                 </a>
                 {% endif %}
 
