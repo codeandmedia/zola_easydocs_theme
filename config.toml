@@ -11,3 +11,4 @@ highlight_theme = "base16-ocean-light"
 logo = "https://easydocs.codeandmedia.com/logo.svg"
 release = "https://api.github.com/repos/getzola/zola/releases/latest"
 favicon = "https://www.getzola.org/favicon.ico"
+easydocs_logo_always_clickable = false

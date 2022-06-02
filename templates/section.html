@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block title %} {{ config.title }} | {{ section.title }} {% endblock title %}
+
+
+{% block content %}
+    {% if section.word_count > 0 %}
+        {{ section.content }}
+    {% else %}
+        <h1 class="title">
+            {{ section.title }}
+        </h1>
+        Pages:
+        <ul>
+            {% for page in section.pages %}
+                <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock content %}
+
+
+
