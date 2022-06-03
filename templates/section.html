@@ -6,14 +6,16 @@
     {% if section.word_count > 0 -%}
         {{ section.content }}
     {% else -%}
-        <h1 class="title">
-            {{ section.title }}
-        </h1>
-        Pages:
+        <h2 class="title"> {{ section.title }} </h2>
+        <h3>Pages:</h3>
         <ul>
-            {% for page in section.pages -%}
-                <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-            {% endfor -%}
+            {% if section.pages -%}
+                {% for page in section.pages -%}
+                    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+                {% endfor -%}
+            {% else -%}
+                <li>No pages</li>
+            {% endif %}
         </ul>
     {% endif -%}
 {% endblock content %}
