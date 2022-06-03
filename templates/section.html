@@ -7,6 +7,17 @@
         {{ section.content }}
     {% else -%}
         <h2 class="title"> {{ section.title }} </h2>
+
+        {% if section.subsections -%}
+            <h3>Subsections:</h3>
+            <ul>
+                {% for subsec in section.subsections -%}
+                    {% set sec_ = get_section(path=subsec) -%}
+                    <li><a href="{{ sec_.permalink | safe }}">{{ sec_.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif -%}
+
         <h3>Pages:</h3>
         <ul>
             {% if section.pages -%}
