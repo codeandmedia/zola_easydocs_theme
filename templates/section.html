@@ -2,21 +2,33 @@
 
 {% block title %} {{ config.title }} | {{ section.title }} {% endblock title %}
 
-
 {% block content %}
-    {% if section.word_count > 0 %}
-        {{ section.content }}
-    {% else %}
-        <h1 class="title">
-            {{ section.title }}
-        </h1>
-        Pages:
+    {% if section.word_count > 0 -%}
+        {{ section.content | safe }}
+    {% else -%}
+        <h2 class="title"> {{ section.title }} </h2>
+
+        {% if section.subsections -%}
+            <h3>Subsections:</h3>
+            <ul>
+                {% for subsec in section.subsections -%}
+                    {% set sec_ = get_section(path=subsec) -%}
+                    <li><a href="{{ sec_.permalink | safe }}">{{ sec_.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif -%}
+
+        <h3>Pages:</h3>
         <ul>
-            {% for page in section.pages %}
-                <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-            {% endfor %}
+            {% if section.pages -%}
+                {% for page in section.pages -%}
+                    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+                {% endfor -%}
+            {% else -%}
+                <li>No pages</li>
+            {% endif %}
         </ul>
-    {% endif %}
+    {% endif -%}
 {% endblock content %}
 
 
