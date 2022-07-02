@@ -77,7 +77,7 @@ pre {
 
   code {
   background:transparent;
-  
+
   &::after {
     content: attr(data-lang);
     font-style: italic;
@@ -120,7 +120,7 @@ nav {
   height: 92vh;
   top:$baseline;
   left:$baseline;
-  bottom: $baseline; 
+  bottom: $baseline;
   padding-right: $baseline;
   width: 20rem;
 
@@ -143,10 +143,10 @@ nav {
   li {
     color:$color;
     margin-left: $font-size;
-  
+
   &::before {
     display: inline-block;
-    content:""; 
+    content:"";
   }
 
   ul {
@@ -214,7 +214,7 @@ main {
 
  .tree-toggle-label {
   user-select:none;
-  cursor:pointer; 
+  cursor:pointer;
  }
 
  .tree-toggle-label::before {
@@ -260,12 +260,12 @@ main {
   animation-duration:0.25s;
   animation-fill-mode:both;
  }
- 
+
 
  .subtree li {
   list-style-type: none;
   margin-left: $baseline;
- 
+
 
   a {
     color:$color;
@@ -299,7 +299,7 @@ article {
 }
 
 
-@media screen and (max-width: 1023px) { 
+@media screen and (max-width: 1023px) {
 
   main {
     flex-flow: column nowrap;
@@ -340,6 +340,13 @@ article {
   #on_right {
     margin-top:$baseline;
   }
+}
+
+blockquote {
+  border-left: $quote-border;
+  margin: 0;
+  background-color: $quote-bg;
+  padding: 0 20px;
 }
 
 @import "fabric-icons-inline";
