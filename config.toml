@@ -12,3 +12,10 @@ logo = "https://easydocs.codeandmedia.com/logo.svg"
 release = "https://api.github.com/repos/getzola/zola/releases/latest"
 favicon = "https://www.getzola.org/favicon.ico"
 easydocs_logo_always_clickable = false
+
+# For use with offline sites. If set to true template links are generated with the full path indcluding index.html
+# Insired by Abridge theme https://www.getzola.org/themes/abridge/
+# Notes:
+#  - Also requries the base URL to be set to the local folder where the site is stored eg. base_url = /home/user/mysite/public/
+#  - This is not portable and only works with a specific local folder
+easydocs_uglyurls = false

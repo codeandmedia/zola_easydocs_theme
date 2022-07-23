@@ -3,6 +3,12 @@
 {% block title %} {{ config.title }} | {{ section.title }} {% endblock title %}
 
 {% block content %}
+    {% if not config.extra.easydocs_uglyurls -%}
+        {% set _ugly_url = "" -%}
+    {% else %}
+        {% set _ugly_url = "index.html" -%}
+    {% endif -%}
+
     {% if section.word_count > 0 -%}
         {{ section.content | safe }}
     {% else -%}
@@ -13,7 +19,7 @@
             <ul>
                 {% for subsec in section.subsections -%}
                     {% set sec_ = get_section(path=subsec) -%}
-                    <li><a href="{{ sec_.permalink | safe }}">{{ sec_.title }}</a></li>
+                    <li><a href="{{ sec_.permalink | safe }}{{ _ugly_url }}">{{ sec_.title }}</a></li>
                 {% endfor %}
             </ul>
         {% endif -%}
@@ -22,7 +28,7 @@
         <ul>
             {% if section.pages -%}
                 {% for page in section.pages -%}
-                    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+                    <li><a href="{{ page.permalink | safe }}{{ _ugly_url }}">{{ page.title }}</a></li>
                 {% endfor -%}
             {% else -%}
                 <li>No pages</li>
