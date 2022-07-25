@@ -3,12 +3,6 @@
 {% block title %} {{ config.title }} | {{ section.title }} {% endblock title %}
 
 {% block content %}
-    {% if not config.extra.easydocs_uglyurls -%}
-        {% set _ugly_url = "" -%}
-    {% else %}
-        {% set _ugly_url = "index.html" -%}
-    {% endif -%}
-
     {% if section.word_count > 0 -%}
         {{ section.content | safe }}
     {% else -%}

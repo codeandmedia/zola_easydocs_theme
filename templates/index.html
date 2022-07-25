@@ -29,6 +29,7 @@
     </script>
 {% endif -%}
 <main>
+    {# Create variable to allow appending index.html at end of links if set in config #}
     {% if not config.extra.easydocs_uglyurls -%}
         {% set _ugly_url = "" -%}
     {% else %}

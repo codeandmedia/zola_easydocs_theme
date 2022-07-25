@@ -1,9 +1,4 @@
 <h2>Table of Contents</h2>
-{% if not config.extra.easydocs_uglyurls -%}
-    {% set _ugly_url = "" -%}
-{% else %}
-    {% set _ugly_url = "index.html" -%}
-{% endif -%}
 {% if section.subsections -%}
     <ul>
         {% for subsec in section.subsections -%}
