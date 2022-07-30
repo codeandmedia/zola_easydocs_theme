@@ -4,11 +4,11 @@
         {% for subsec in section.subsections -%}
             {% set sec_ = get_section(path=subsec) -%}
             <li>
-                <a href="{{ sec_.permalink | safe }}">{{ sec_.title }}</a>
+                <a href="{{ sec_.permalink | safe }}{{ _ugly_url }}">{{ sec_.title }}</a>
                 {% if sec_.pages -%}
                     <ul>
                         {% for page_ in sec_.pages -%}
-                            <li><a href="{{ page_.permalink | safe }}">{{ page_.title }}</a></li>
+                            <li><a href="{{ page_.permalink | safe }}{{ _ugly_url }}">{{ page_.title }}</a></li>
                         {% endfor %}
                     </ul>
                 {% endif -%}

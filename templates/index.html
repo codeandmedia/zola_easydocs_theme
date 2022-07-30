@@ -29,9 +29,14 @@
     </script>
 {% endif -%}
 <main>
+    {# Create variable to allow appending index.html at end of links if set in config #}
+    {% if not config.extra.easydocs_uglyurls -%}
+        {% set _ugly_url = "" -%}
+    {% else %}
+        {% set _ugly_url = "index.html" -%}
+    {% endif -%}
 
-    {% block nav -%}
-
+    {%- block nav -%}
         <nav>
             {% if config.extra.logo -%}
                 {% set _logo = config.extra.logo -%}
@@ -39,15 +44,15 @@
                     {% set _logo = get_url(path=config.extra.logo) -%}
                 {% endif -%}
                 {% if current_path == "/" and not config.extra.easydocs_logo_always_clickable -%}
-                    <img src="{{ _logo | safe }}" alt=""/>
+                    <img src="{{ _logo | safe }}" alt="logo"/>
                 {% else -%}
-                    <a href="{{ config.base_url }}">
-                        <img src="{{ _logo | safe }}" alt=""/>
+                    <a href="{{ config.base_url }}{{ _ugly_url }}">
+                        <img src="{{ _logo | safe }}" alt="logo"/>
                     </a>
                 {% endif -%}
 
             {% else -%}
-                <h1><a href="{{ config.base_url }}">{{ config.title }}</a></h1>
+                <h1><a href="{{ config.base_url }}{{ _ugly_url }}">{{ config.title }}</a></h1>
             {% endif -%}
 
             {% if config.extra.release -%}
@@ -69,7 +74,7 @@
                     <ul class="subtree">
                         {% for page in subsection.pages -%}
                             <li {% if current_path == page.path %}class="active"{% endif %}>
-                                <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+                                <a href="{{ page.permalink | safe }}{{ _ugly_url }}">{{ page.title }}</a>
                             </li>
 
                             {% if page.toc -%}
@@ -90,12 +95,19 @@
                                     {% if header_count > 4 -%}
                                         <ul id="toc">
                                             {% for h2 in page.toc -%}
-                                                <li><a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                                                <li><a href="
+                                                        {{ h2.permalink | safe }}{{ _ugly_url }}">{{ h2.title }}</a>
                                                     {% if h2.children -%}
                                                         <ul>
                                                             {% for h3 in h2.children -%}
                                                                 <li>
-                                                                    <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+                                                                    <a href="
+
+
+
+
+
+                                                                            {{ h3.permalink | safe }}{{ _ugly_url }}">{{ h3.title }}</a>
                                                                 </li>
                                                             {% endfor -%}
                                                         </ul>
