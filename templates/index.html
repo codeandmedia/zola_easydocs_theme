@@ -101,13 +101,7 @@
                                                         <ul>
                                                             {% for h3 in h2.children -%}
                                                                 <li>
-                                                                    <a href="
-
-
-
-
-
-                                                                            {{ h3.permalink | safe }}{{ _ugly_url }}">{{ h3.title }}</a>
+                                                                    <a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
                                                                 </li>
                                                             {% endfor -%}
                                                         </ul>
