@@ -20,5 +20,5 @@ easydocs_logo_always_clickable = false
 #  - This is not portable and only works with a specific local folder
 easydocs_uglyurls = false
 
-# Controls how many headings are needed on a page before the headings show in the navigation on the left
-easydocs_heading_threshold = 4
+# Minimum number of headings needed on a page before the headings show in the navigation on the left. Defaults to 5.
+easydocs_heading_threshold = 5
