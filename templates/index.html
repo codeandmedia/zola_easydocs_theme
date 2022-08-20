@@ -81,6 +81,7 @@
 
                                 {% if current_path == page.path -%}
 
+                                    {# Count number of headers on page #}
                                     {% set_global header_count = 0 -%}
                                     {% for h2 in page.toc -%}
                                         {% set_global header_count = header_count + 1 -%}
@@ -92,7 +93,8 @@
                                         {% endfor -%}
                                     {% endfor -%}
 
-                                    {% if header_count > 4 -%}
+                                    {# Output headers if above threshold #}
+                                    {% if header_count > config.extra.easydocs_heading_threshold -%}
                                         <ul id="toc">
                                             {% for h2 in page.toc -%}
                                                 <li><a href="
