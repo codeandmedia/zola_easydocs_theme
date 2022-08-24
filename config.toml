@@ -19,3 +19,6 @@ easydocs_logo_always_clickable = false
 #  - Also requries the base URL to be set to the local folder where the site is stored eg. base_url = /home/user/mysite/public/
 #  - This is not portable and only works with a specific local folder
 easydocs_uglyurls = false
+
+# Minimum number of headings needed on a page before the headings show in the navigation on the left. Defaults to 5.
+easydocs_heading_threshold = 5
