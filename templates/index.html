@@ -30,7 +30,7 @@
 {% endif -%}
 <main>
     {# Create variable to allow appending index.html at end of links if set in config #}
-    {% if not config.extra.easydocs_uglyurls or config.mode == "serve" -%}
+    {% if not config.extra.easydocs_uglyurls or config.mode == "serve" or config.mode == "Serve" -%}
         {% set _ugly_url = "" -%}
     {% else %}
         {% set _ugly_url = "index.html" -%}
