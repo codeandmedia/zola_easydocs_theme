@@ -147,11 +147,13 @@
 
         <div id="wrap">
             {% block content -%}
+              {%- if section.word_count -%}
                 {%- if section.word_count > 0 -%}
                     {{ section.content |safe }}
                 {%- else -%}
                     {%- include "sec_toc_2_level.html" -%}
                 {% endif -%}
+              {% endif %}
             {% endblock content %}
         </div>
 
