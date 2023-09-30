@@ -1,7 +1,7 @@
-+++
-title = "Table of Contents"
-weight = 60
-+++
+---
+title: Table of Contents
+weight: 60
+---
 
 Each page/section will automatically generate a table of contents for itself based on the headers generated with markdown.
 

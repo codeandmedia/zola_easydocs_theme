@@ -1,7 +1,7 @@
-+++
-title = "Archive"
-weight = 90
-+++
+---
+title: Archive
+weight: 90
+---
 
 Zola doesn't have a built-in way to display an archive page (a page showing
 all post titles ordered by year). However, this can be accomplished directly in the templates:

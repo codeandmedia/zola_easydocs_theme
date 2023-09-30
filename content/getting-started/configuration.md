@@ -1,7 +1,7 @@
-+++
-title = "Configuration"
-weight = 40
-+++
+---
+title: Configuration
+weight: 40
+---
 
 The default configuration is sufficient to get Zola running locally but not more than that.
 It follows the philosophy of paying for only what you need, almost everything is turned off by default.
@@ -12,6 +12,7 @@ If you are not familiar with TOML, have a look at [the TOML spec](https://github
 ⚠️ If you add keys to your `config.toml`, you must pay attention to which TOML section it belongs to.
 
 Here are the current `config.toml` sections:
+
 1. main (unnamed)
 2. link_checker
 3. slugify

@@ -1,7 +1,7 @@
-+++
-title = "Sass"
-weight = 110
-+++
+---
+title: Sass
+weight: 110
+---
 
 Sass is a popular CSS preprocessor that adds special features (e.g., variables, nested rules) to facilitate the
 maintenance of large sets of CSS rules. If you're curious about what Sass

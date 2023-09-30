@@ -1,7 +1,7 @@
-+++
-title = "Search"
-weight = 100
-+++
+---
+title: Search
+weight: 100
+---
 
 Zola can build a search index from the sections and pages content to
 be used by a JavaScript library such as [elasticlunr](http://elasticlunr.com/).
@@ -22,5 +22,6 @@ the JavaScript/CSS code to do an actual search and display results. You can look
 implements it to get an idea: [search.js](https://github.com/getzola/zola/tree/master/docs/static/search.js).
 
 ## Configuring the search index
+
 In some cases, the default indexing strategy is not suitable. You can customise which fields to include and whether
 to truncate the content in the [search configuration](@/getting-started/configuration.md).

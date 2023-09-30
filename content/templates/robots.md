@@ -1,7 +1,7 @@
-+++
-title = "Robots.txt"
-weight = 70
-+++
+---
+title: Robots.txt
+weight: 70
+---
 
 Zola will look for a `robots.txt` file in the `templates` directory or
 use the built-in one.

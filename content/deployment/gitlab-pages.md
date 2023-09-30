@@ -1,7 +1,7 @@
-+++
-title = "GitLab Pages"
-weight = 40
-+++
+---
+title: GitLab Pages
+weight: 40
+---
 
 We are going to use the GitLab CI runner to automatically publish the site (this CI runner is already included in your repository if you use GitLab.com).
 
@@ -13,7 +13,6 @@ For example, assuming that the username is `john`, you have to create a project 
 
 Under your group `websites`, you created a project called `websites.gitlab.io`. Your project’s URL will be `https://gitlab.com/websites/websites.gitlab.io`. Once you enable GitLab Pages for your project, your website will be published under `https://websites.gitlab.io`.
 
-
 This guide assumes that your Zola project is located in the root of your repository.
 
 ## Ensuring that the CI runner can access your theme
@@ -22,12 +21,13 @@ Depending on how you added your theme, your repository may not contain it. The b
 be added is to use submodules. When doing this, ensure that you are using the `https` version of the URL.
 
 ```shell
-$ git submodule add {THEME_URL} themes/{THEME_NAME}
+git submodule add {THEME_URL} themes/{THEME_NAME}
 ```
 
 For example, this could look like:
+
 ```shell
-$ git submodule add https://github.com/getzola/hyde.git themes/hyde
+git submodule add https://github.com/getzola/hyde.git themes/hyde
 ```
 
 ## Setting up the GitLab CI/CD Runner
@@ -65,7 +65,7 @@ Push this new file and ... Tada! You're done! If you navigate to `settings > pag
 something like this:
 
 > Congratulations! Your pages are served under:  
-https://john.gitlab.io
+<https://john.gitlab.io>
 
-More information on the process to host on GitLab pages and additional information like using a custom domain is documented 
+More information on the process to host on GitLab pages and additional information like using a custom domain is documented
 [in this GitLab blog post](https://about.gitlab.com/2016/04/07/gitlab-pages-setup/).

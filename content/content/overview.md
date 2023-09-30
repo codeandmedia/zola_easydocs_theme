@@ -1,7 +1,7 @@
-+++
-title = "Overview"
-weight = 10
-+++
+---
+title: Overview
+weight: 10
+---
 
 Zola uses the directory structure to determine the site structure.
 Each child directory in the `content` directory represents a [section](@/content/section.md)
@@ -46,7 +46,6 @@ built, which allows us to use a relative path to access them.
 
 Pages with co-located assets should not be placed directly in their section directory (such as `latest-experiment.md`), but
 as an `index.md` file in a dedicated directory (`latest-experiment/index.md`), like so:
-
 
 ```bash
 └── research
@@ -103,14 +102,15 @@ had the following directory structure (a simplified version of the structure pre
 ```
 
 To add an image to the `https://mywebsite.com/blog/configuration` page, you have three options:
- *  You could save the image to the `content/blog/configuration` directory and then link to it with a
+
+* You could save the image to the `content/blog/configuration` directory and then link to it with a
  relative path from the `index.md` page.  This is the approach described under **co-location**
  above.
- *  You could save the image to a `static/blog/configuration` directory and link to it in exactly the
+* You could save the image to a `static/blog/configuration` directory and link to it in exactly the
  same way as if you had co-located it. If you do this, the generated files will be identical to those
  obtained if you had co-located the image; the only difference will be that all static files will be saved in the
  static directory rather than in the content directory. The choice depends on your organizational needs.
- *  Or you could save the image to some arbitrary directory within the static directory. For example,
+* Or you could save the image to some arbitrary directory within the static directory. For example,
  you could save all images to `static/images`.  Using this approach, you can no longer use relative links. Instead,
  you must use an absolute link to `images/[filename]` to access your
  image. This might be preferable for small sites or for sites that associate images with

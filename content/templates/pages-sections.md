@@ -1,17 +1,17 @@
-+++
-title = "Sections and Pages"
-weight = 20
-+++
+---
+title: Sections and Pages
+weight: 20
+---
 
 Templates for pages and sections are very similar.
 
 ## Page variables
+
 Zola will try to load the `templates/page.html` template, the `page.html` template of the theme if one is used
 or render the built-in template (a blank page).
 
 Whichever template you decide to render, you will get a `page` variable in your template
 with the following fields:
-
 
 ```ts
 // The HTML output of the Markdown content
@@ -62,13 +62,13 @@ translations: Array<TranslatedContent>;
 ```
 
 ## Section variables
+
 By default, Zola will try to load `templates/index.html` for `content/_index.md`
 and `templates/section.html` for other `_index.md` files. If there isn't
 one, it will render the built-in template (a blank page).
 
 Whichever template you decide to render, you will get a `section` variable in your template
 with the following fields:
-
 
 ```ts
 // The HTML output of the Markdown content
@@ -142,4 +142,3 @@ permalink: String;
 // the `get_page` function.
 path: String;
 ```
-

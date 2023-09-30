@@ -1,5 +1,5 @@
-+++
-title = "Themes"
-weight = 4
-sort_by = "weight"
-+++
+---
+title: Themes
+weight: 4
+sort_by: weight
+---

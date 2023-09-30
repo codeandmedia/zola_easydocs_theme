@@ -1,8 +1,9 @@
-+++
-title = "Feeds"
-weight = 50
-aliases = ["/documentation/templates/rss/"]
-+++
+---
+title: Feeds
+weight: 50
+aliases:
+  - /documentation/templates/rss/
+---
 
 If the site `config.toml` file sets `generate_feed = true`, then Zola will
 generate a feed file for the site, named according to the `feed_filename`
@@ -45,20 +46,24 @@ As an example this is how it looks like using [Firefox](https://en.wikipedia.org
 ![RSS feed autodiscovery example.](rss_feed.png)
 
 You can enable posts autodiscovery modifying your blog `base.html` template adding the following code in between the `<head>` tags.
+
 ```html
 {% block rss %}
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{/* get_url(path="rss.xml", trailing_slash=false) */}}">
 {% endblock %}
 ```
+
 You can as well use an Atom feed using `type="application/atom+xml"` and `path="atom.xml"`.
 
 All pages on your site will refer to your post feed.
 
 In order to enable the tag feeds as well, you can overload the `block rss` using the following code in your `tags/single.html` template.
+
 ```html
 {% block rss %}
   {% set rss_path = "tags/" ~ term.name ~ "/rss.xml" %}
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{/* get_url(path=rss_path, trailing_slash=false) */}}">
 {% endblock rss %}
 ```
+
 Each tag page will refer to it's dedicated feed.

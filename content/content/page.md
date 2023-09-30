@@ -1,7 +1,7 @@
-+++
-title = "Page"
-weight = 30
-+++
+---
+title: Page
+weight: 30
+---
 
 A page is any file ending with `.md` in the `content` directory, except files
 named `_index.md`.
@@ -35,7 +35,7 @@ For any page within your content folder, its output path will be defined by eith
 - its filename
 
 Either way, these proposed path will be sanitized before being used.
-If `slugify.paths` is set to `"on"` in the site's config - the default - paths are [slugified](https://en.wikipedia.org/wiki/Clean_URL#Slug). 
+If `slugify.paths` is set to `"on"` in the site's config - the default - paths are [slugified](https://en.wikipedia.org/wiki/Clean_URL#Slug).
 If it is set to `"safe"`, only sanitation is performed, with the following characters being removed: `<`, `>`, `:`, `/`, `|`, `?`, `*`, `#`, `\\`, `(`, `)`, `[`, `]` as well as newlines and tabulations. This ensures that the path can be represented on all operating systems.
 Additionally, trailing whitespace and dots are removed and whitespaces are replaced by `_`.
 
@@ -62,6 +62,7 @@ This frontmatter will output the article to `[base_url]/zines/femmes-libres-libÃ
 ### Path from filename
 
 When the article's output path is not specified in the frontmatter, it is extracted from the file's path in the content folder. Consider a file `content/foo/bar/thing.md`. The output path is constructed:
+
 - if the filename is `index.md`, its parent folder name (`bar`) is used as output path
 - otherwise, the output path is extracted from `thing`Â (the filename without the `.md` extension)
 

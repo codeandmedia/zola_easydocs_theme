@@ -1,7 +1,7 @@
-+++
-title = "Shortcodes"
-weight = 40
-+++
+---
+title: Shortcodes
+weight: 40
+---
 
 Zola borrows the concept of [shortcodes](https://codex.wordpress.org/Shortcode_API) from WordPress.
 In our case, a shortcode corresponds to a template defined in the `templates/shortcodes` directory or
@@ -19,6 +19,7 @@ rather than `.html`. This may be particularly useful if you want to include head
 [table of contents](@/content/table-of-contents.md).
 
 ## Writing a shortcode
+
 Let's write a shortcode to embed YouTube videos as an example.
 In a file called `youtube.html` in the `templates/shortcodes` directory, paste the
 following:
@@ -66,8 +67,8 @@ running `zola serve` because it has been loaded but it will fail during `zola bu
 
 There are two kinds of shortcodes:
 
-- ones that do not take a body, such as the YouTube example above
-- ones that do, such as one that styles a quote
+* ones that do not take a body, such as the YouTube example above
+* ones that do, such as one that styles a quote
 
 In both cases, the arguments must be named and they will all be passed to the template.
 
@@ -77,11 +78,11 @@ Although theoretically an argument name could be a number, it will not be possib
 
 Argument values can be of one of five types:
 
-- string: surrounded by double quotes, single quotes or backticks
-- bool: `true` or `false`
-- float: a number with a decimal point (e.g., 1.2)
-- integer: a whole number or its negative counterpart (e.g., 3)
-- array: an array of any kind of value, except arrays
+* string: surrounded by double quotes, single quotes or backticks
+* bool: `true` or `false`
+* float: a number with a decimal point (e.g., 1.2)
+* integer: a whole number or its negative counterpart (e.g., 3)
+* array: an array of any kind of value, except arrays
 
 Malformed values will be silently ignored.
 
@@ -108,6 +109,7 @@ Note that if you want to have some content that looks like a shortcode but not h
 you will need to escape it by using `{{/*` and `*/}}` instead of `{{` and `}}`.
 
 ### Shortcodes with body
+
 Let's imagine that we have the following shortcode `quote.html` template:
 
 ```jinja2

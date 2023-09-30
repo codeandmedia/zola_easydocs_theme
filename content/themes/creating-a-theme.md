@@ -1,13 +1,14 @@
-+++
-title = "Creating a theme"
-weight = 30
-+++
+---
+title: Creating a theme
+weight: 30
+---
 
 Creating a theme is exactly like creating a normal site with Zola, except you
 will want to use many [Tera blocks](https://tera.netlify.com/docs#inheritance) to
 allow users to easily modify it.
 
 ## Getting started
+
 As mentioned, a theme is just like any site; start by running `zola init MY_THEME_NAME`.
 
 The only thing needed to turn that site into a theme is to add a `theme.toml` configuration file with the
@@ -45,6 +46,7 @@ repo = "https://www.github.com/mdo/hyde"
 A simple theme you can use as an example is [Hyde](https://github.com/Keats/hyde).
 
 ## Working on a theme
+
 As a theme is just a site, you can simply use `zola serve` and make changes to your
 theme, with live reload working as expected.
 
@@ -69,4 +71,3 @@ of importance
 
 When your theme is ready, you can submit it to the [themes repository](https://github.com/getzola/themes)
 by following the process in the README.
-

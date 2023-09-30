@@ -1,7 +1,7 @@
-+++
-title = "CLI usage"
-weight = 15
-+++
+---
+title: CLI usage
+weight: 15
+---
 
 Zola only has 4 commands: `init`, `build`, `serve` and `check`.
 
@@ -14,8 +14,8 @@ Creates the directory structure used by Zola at the given directory after asking
 Any choices made during these prompts can be easily changed by modifying `config.toml`.
 
 ```bash
-$ zola init my_site
-$ zola init
+zola init my_site
+zola init
 ```
 
 If the `my_site` directory already exists, Zola will only populate it if it contains only hidden files (dotfiles are ignored). If no `my_site` argument is passed, Zola will try to populate the current directory.
@@ -25,8 +25,8 @@ In case you want to attempt to populate a non-empty directory and are brave, you
 You can initialize a git repository and a Zola site directly from within a new folder:
 
 ```bash
-$ git init
-$ zola init
+git init
+zola init
 ```
 
 ## build
@@ -34,13 +34,13 @@ $ zola init
 This will build the whole site in the `public` directory (if this directory already exists, it is overwritten).
 
 ```bash
-$ zola build
+zola build
 ```
 
 You can override the config `base_url` by passing a new URL to the `base-url` flag.
 
 ```bash
-$ zola build --base-url $DEPLOY_URL
+zola build --base-url $DEPLOY_URL
 ```
 
 This is useful for example when you want to deploy previews of a site to a dynamic URL, such as Netlify
@@ -49,18 +49,19 @@ deploy previews.
 You can override the default output directory `public` by passing another value to the `output-dir` flag.
 
 ```bash
-$ zola build --output-dir $DOCUMENT_ROOT
+zola build --output-dir $DOCUMENT_ROOT
 ```
 
 You can point to a config file other than `config.toml` like so (note that the position of the `config` option is important):
 
 ```bash
-$ zola --config config.staging.toml build
+zola --config config.staging.toml build
 ```
 
 You can also process a project from a different directory with the `root` flag. If building a project 'out-of-tree' with the `root` flag, you may want to combine it with the `output-dir` flag. (Note that like `config`, the position is important):
+
 ```bash
-$ zola --root /path/to/project build
+zola --root /path/to/project build
 ```
 
 By default, drafts are not loaded. If you wish to include them, pass the `--drafts` flag.
@@ -80,14 +81,14 @@ In the event you don't want Zola to run a local web server, you can use the `--w
 Before starting, Zola will delete the `public` directory to start from a clean slate.
 
 ```bash
-$ zola serve
-$ zola serve --port 2000
-$ zola serve --interface 0.0.0.0
-$ zola serve --interface 0.0.0.0 --port 2000
-$ zola serve --interface 0.0.0.0 --base-url 127.0.0.1
-$ zola serve --interface 0.0.0.0 --port 2000 --output-dir www/public
-$ zola serve --watch-only
-$ zola serve --open
+zola serve
+zola serve --port 2000
+zola serve --interface 0.0.0.0
+zola serve --interface 0.0.0.0 --port 2000
+zola serve --interface 0.0.0.0 --base-url 127.0.0.1
+zola serve --interface 0.0.0.0 --port 2000 --output-dir www/public
+zola serve --watch-only
+zola serve --open
 ```
 
 The serve command will watch all your content and provide live reload without
@@ -96,11 +97,10 @@ a hard refresh if possible.
 Some changes cannot be handled automatically and thus live reload may not always work. If you
 fail to see your change or get an error, try restarting `zola serve`.
 
-
 You can also point to a config file other than `config.toml` like so (note that the position of the `config` option is important):
 
 ```bash
-$ zola --config config.staging.toml serve
+zola --config config.staging.toml serve
 ```
 
 By default, drafts are not loaded. If you wish to include them, pass the `--drafts` flag.

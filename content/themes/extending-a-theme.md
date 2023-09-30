@@ -1,7 +1,7 @@
-+++
-title = "Extending a theme"
-weight = 30
-+++
+---
+title: Extending a theme
+weight: 30
+---
 
 When your site uses a theme, you can replace parts of it in your site's templates folder. For any given theme template, you can either override a single block in it, or replace the whole template. If a site template and a theme template collide, the site template will be given priority. Whether a theme template collides or not, theme templates remain accessible from any template within `theme_name/templates/`.
 

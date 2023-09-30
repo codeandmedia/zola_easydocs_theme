@@ -1,7 +1,7 @@
-+++
-title = "Section"
-weight = 20
-+++
+---
+title: Section
+weight: 20
+---
 
 A section is created whenever a directory (or subdirectory) in the `content` section contains an
 `_index.md` file.  If a directory does not contain an `_index.md` file, no section will be
@@ -19,7 +19,8 @@ Any non-Markdown file in a section directory is added to the `assets` collection
 Markdown file using relative links.
 
 ## Drafting
-Just like pages sections can be drafted by setting the `draft` option in the front matter. By default this is not done. When a section is drafted it's descendants like pages, subsections and assets will not be processed unless the `--drafts` flag is passed. Note that even pages that don't have a `draft` status will not be processed if one of their parent sections is drafted. 
+
+Just like pages sections can be drafted by setting the `draft` option in the front matter. By default this is not done. When a section is drafted it's descendants like pages, subsections and assets will not be processed unless the `--drafts` flag is passed. Note that even pages that don't have a `draft` status will not be processed if one of their parent sections is drafted.
 
 ## Front matter
 
@@ -38,7 +39,6 @@ legacy content. In this case the embedded metadata must be enclosed by triple mi
 
 Here is an example `_index.md` with all the available variables. The values provided below are the
 default values.
-
 
 ```toml
 title = ""
@@ -124,6 +124,7 @@ You can also change the pagination path (the word displayed while paginated in t
 by setting the `paginate_path` variable, which defaults to `page`.
 
 ## Sorting
+
 It is very common for Zola templates to iterate over pages or sections
 to display all pages/sections in a given directory.  Consider a very simple
 example: a `blog` directory with three files: `blog/Post_1.md`,
@@ -151,21 +152,25 @@ If several pages have the same date/weight/order, their permalink will be used
 to break the tie based on alphabetical order.
 
 ## Sorting pages
+
 The `sort_by` front-matter variable can have the following values:
 
 ### `date`
+
 This will sort all pages by their `date` field, from the most recent (at the
 top of the list) to the oldest (at the bottom of the list).  Each page will
 get `page.earlier` and `page.later` variables that contain the pages with
 earlier and later dates, respectively.
 
 ### `weight`
+
 This will be sort all pages by their `weight` field, from lightest weight
 (at the top of the list) to heaviest (at the bottom of the list).  Each
 page gets `page.lighter` and `page.heavier` variables that contain the
 pages with lighter and heavier weights, respectively.
 
 ### Reversed sorting
+
 When iterating through pages, you may wish to use the Tera `reverse` filter,
 which reverses the order of the pages.  For example, after using the `reverse` filter,
 pages sorted by weight will be sorted from lightest (at the top) to heaviest
@@ -174,9 +179,10 @@ to newest (at the bottom).
 
 `reverse` has no effect on `page.later`/`page.earlier` or `page.heavier`/`page.lighter`.
 
-If the section is paginated the `paginate_reversed=true` in the front matter of the relevant section should be set instead of using the filter. 
+If the section is paginated the `paginate_reversed=true` in the front matter of the relevant section should be set instead of using the filter.
 
 ## Sorting subsections
+
 Sorting sections is a bit less flexible: sections can only be sorted by `weight`,
 and do not have variables that point to the heavier/lighter sections.
 

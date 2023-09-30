@@ -1,14 +1,14 @@
-+++
-title = "Taxonomies"
-weight = 90
-+++
+---
+title: Taxonomies
+weight: 90
+---
 
 Zola has built-in support for taxonomies. Taxonomies are a way for users to group content according to user-defined categories.
 
 ## Definitions
 
-- Taxonomy: A category that can be used to group content 
-- Term: A specific group within a taxonomy 
+- Taxonomy: A category that can be used to group content
+- Term: A specific group within a taxonomy
 - Value: A piece of content that can be associated with a term
 
 ## Example: a movie website
@@ -20,9 +20,10 @@ Imagine that you want to make a website to display information about various mov
 - Awards
 - Release year
 
-Then at build time Zola can create pages for each taxonomy listing all of the known terms as well as pages for each term in a taxonomy, listing all of the pieces of content associated with that term. 
+Then at build time Zola can create pages for each taxonomy listing all of the known terms as well as pages for each term in a taxonomy, listing all of the pieces of content associated with that term.
 
-Imagine again we have the following movies: 
+Imagine again we have the following movies:
+
 ```
 - Shape of water                   <--- Value
   - Director                         <--- Taxonomy
@@ -126,6 +127,7 @@ release-year = ["2017"]
 ## Output paths
 
 In a similar manner to how section and pages calculate their output path:
+
 - the taxonomy name is never slugified
 - the taxonomy term (e.g. as specific tag) is slugified when `slugify.taxonomies` is enabled (`"on"`, the default) in the configuration
 
@@ -135,4 +137,5 @@ The taxonomy pages are then available at the following paths:
 $BASE_URL/$NAME/ (taxonomy)
 $BASE_URL/$NAME/$SLUG (taxonomy entry)
 ```
-Note that taxonomies are case insensitive so terms that have the same slug will get merged, e.g. sections and pages containing the tag "example" will be shown in the same taxonomy page as ones containing "Example" 
+
+Note that taxonomies are case insensitive so terms that have the same slug will get merged, e.g. sections and pages containing the tag "example" will be shown in the same taxonomy page as ones containing "Example"

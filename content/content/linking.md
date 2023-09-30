@@ -1,14 +1,15 @@
-+++
-title = "Internal links & deep linking"
-weight = 50
-+++
+---
+title: Internal links & deep linking
+weight: 50
+---
 
 ## Heading id and anchor insertion
-While rendering the Markdown content, a unique id will automatically be assigned to each heading. 
+
+While rendering the Markdown content, a unique id will automatically be assigned to each heading.
 This id is created by converting the heading text to a [slug](https://en.wikipedia.org/wiki/Semantic_URL#Slug) if `slugify.anchors` is set to `"on"` (the default).
 If `slugify.paths` is set to `"safe"`, whitespaces are replaced by `_` and the following characters are stripped: `#`, `%`, `<`, `>`, `[`, `]`, `(`, `)`, \`, `^`, `{`, `|`, `}`.
 If `slugify.paths` is set to `"off"`, no modifications are made, and you may be left with nominally illegal ids.
-A number is appended at the end if the slug already exists for that article 
+A number is appended at the end if the slug already exists for that article
 For example:
 
 ```md
@@ -31,6 +32,7 @@ can also be useful for migration of existing sites with different header id sche
 links working.
 
 ## Anchor insertion
+
 It is possible to have Zola automatically insert anchor links next to the heading, as you can see on this documentation
 if you hover a title.
 
@@ -47,6 +49,7 @@ The anchor link template has the following variables:
 - `level`: the heading level (between 1 and 6)
 
 ## Internal links
+
 Linking to other pages and their headings is so common that Zola adds a
 special syntax to Markdown links to handle them: start the link with `@/` and point to the `.md` file you want
 to link to. The path to the file starts from the `content` directory.

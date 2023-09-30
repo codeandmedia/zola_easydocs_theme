@@ -1,11 +1,12 @@
-+++
-title = "Multilingual sites"
-weight = 130
-+++
+---
+title: Multilingual sites
+weight: 130
+---
 
 Zola supports having a site in multiple languages.
 
 ## Configuration
+
 To get started, you will need to add the languages you want to support
 to your `config.toml`. For example:
 
@@ -23,10 +24,11 @@ configuration.
 Note: By default, Chinese and Japanese search indexing is not included. You can include
 the support by building `zola` using `cargo build --features search/indexing-ja search/indexing-zh`.
 Please also note that, enabling Chinese indexing will increase the binary size by approximately
-5 MB while enabling Japanese indexing will increase the binary size by approximately 70 MB 
+5 MB while enabling Japanese indexing will increase the binary size by approximately 70 MB
 due to the incredibly large dictionaries.
 
 ## Content
+
 Once the languages have been added, you can start to translate your content. Zola
 uses the filename to detect the language:
 
@@ -40,5 +42,6 @@ If your default language has an `_index.md` in a directory, you will need to add
 file with the desired front-matter options as there is no language fallback.
 
 ## Output
+
 Zola outputs the translated content with a base URL of `{base_url}/{code}/`.
 The only exception to this is if you are setting a translated page `path` directly in the front matter.

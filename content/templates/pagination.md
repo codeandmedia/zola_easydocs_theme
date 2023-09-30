@@ -1,7 +1,7 @@
-+++
-title = "Pagination"
-weight = 30
-+++
+---
+title: Pagination
+weight: 30
+---
 
 Two things can get paginated: a section and a taxonomy term.
 

@@ -1,7 +1,7 @@
-+++
-title = "GitHub Pages"
-weight = 30
-+++
+---
+title: GitHub Pages
+weight: 30
+---
 
 By default, GitHub Pages uses Jekyll (a ruby based static site generator),
 but you can also publish any generated files provided you have an `index.html` file in the root of a branch called
@@ -10,8 +10,8 @@ also be manually changed in the settings of a repository.
 
 We can use any continuous integration (CI) server to build and deploy our site. For example:
 
- * [Github Actions](#github-actions)
- * [Travis CI](#travis-ci)
+* [Github Actions](#github-actions)
+* [Travis CI](#travis-ci)
 
 ## Github Actions
 
@@ -54,7 +54,7 @@ By commiting the action your first build is triggered. Wait until it's finished,
 
 Finally we need to check the *Github Pages* section of the repository settings. Click on the *Settings* tab and scroll down to the *Github Pages* section. Check if the source is set to *gh-pages* branch and the directory is */ (root)*. You should also see your *Github Pages* link.
 
-There you can also configure a *custom domain* and *Enforce HTTPS* mode. Before configuring a *custom domains*, please check out [this](https://github.com/shalzz/zola-deploy-action/blob/master/README.md#custom-domain). 
+There you can also configure a *custom domain* and *Enforce HTTPS* mode. Before configuring a *custom domains*, please check out [this](https://github.com/shalzz/zola-deploy-action/blob/master/README.md#custom-domain).
 
 ## Travis CI
 
@@ -69,7 +69,7 @@ it. The best way to ensure that it will have full access to the theme is to use 
 submodules. When doing this, ensure that you are using the `https` version of the URL.
 
 ```shell
-$ git submodule add {THEME_URL} themes/{THEME_NAME}
+git submodule add {THEME_URL} themes/{THEME_NAME}
 ```
 
 ## Allowing Travis to push to GitHub
@@ -117,4 +117,4 @@ after_success: |
 If your site is using a custom domain, you will need to mention it in the `ghp-import` command:
 `ghp-import -c vaporsoft.net -n public` for example.
 
-Credits: this page is based on the article https://vaporsoft.net/publishing-gutenberg-to-github/
+Credits: this page is based on the article <https://vaporsoft.net/publishing-gutenberg-to-github/>

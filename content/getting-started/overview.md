@@ -1,7 +1,7 @@
-+++
-title = "Overview"
-weight = 5
-+++
+---
+title: Overview
+weight: 5
+---
 
 ## Zola at a Glance
 
@@ -22,7 +22,7 @@ Unlike some SSGs, Zola makes no assumptions regarding the structure of your site
 Please see the detailed [installation instructions for your platform](@/getting-started/installation.md). With Zola installed, let's initialize our site:
 
 ```bash
-$ zola init myblog
+zola init myblog
 ```
 
 You will be asked a few questions.
@@ -119,9 +119,9 @@ page_template = "blog-page.html"
 
 > Note that although no variables are mandatory, the opening and closing `+++` are required.
 
-* *sort_by = "date"* tells Zola to use the date to order our section pages (more on pages below). 
-* *template = "blog.html"* tells Zola to use `blog.html` in the `templates` directory as the template for listing the Markdown files in this section. 
-* *page_template = "blog-page.html"* tells Zola to use `blog-page.html` in the `templates` directory as the template for individual Markdown files. 
+* *sort_by = "date"* tells Zola to use the date to order our section pages (more on pages below).
+* *template = "blog.html"* tells Zola to use `blog.html` in the `templates` directory as the template for listing the Markdown files in this section.
+* *page_template = "blog-page.html"* tells Zola to use `blog-page.html` in the `templates` directory as the template for individual Markdown files.
 
 For a full list of section variables, please see the [section](@/content/section.md) documentation. We will use *title = "List of blog posts"* in a template (see below).
 
