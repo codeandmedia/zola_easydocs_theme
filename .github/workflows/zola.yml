@@ -1,17 +1,53 @@
-name: Old - Zola on GitHub Pages
+name: Zola on GitHub Pages - Taiki
+
 on:
-  workflow_dispatch:
   # push:
   #   branches:
-  #     - main
+  #     - main 
+  # pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
+          
   build:
-    name: Publish site
     runs-on: ubuntu-latest
+    # if: github.ref != 'refs/heads/main'
     steps:
       - name: Checkout main
-        uses: actions/checkout@v3.0.0
-      - name: Build and deploy
-        uses: Haru-T/zola-deploy-action@0.16.1
+        uses: actions/checkout@v3
+      - name: Install Zola
+        uses: taiki-e/install-action@zola
+      - name: Build Zola
+        run: zola build
         env:
+          # BUILD_ONLY: true
+          # BUILD_FLAGS: --drafts
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
