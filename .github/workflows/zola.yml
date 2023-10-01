@@ -1,4 +1,4 @@
-name: Zola on GitHub Pages
+name: Old - Zola on GitHub Pages
 on:
   workflow_dispatch:
   # push:

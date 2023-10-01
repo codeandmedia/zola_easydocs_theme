@@ -1,0 +1,41 @@
+// Write your custom CSS here
+
+.my-search {
+  &::before {
+    content: url('./search.svg');
+  }
+}
+
+.my-close {
+  &::before {
+    content: url('./close.svg');
+  }
+}
+
+.my-menu {
+  &::before {
+    content: url('./menu.svg');
+  }
+}
+
+.tree-toggle-label {
+  &::before {
+    content: url('./chevron-right.svg');
+  }
+}
+
+.subtree li {
+  &::before {
+    content: url('./file.svg');
+  }
+}
+
+.tree-toggle:checked + .tree-toggle-label::before {
+  content: url('./chevron-right.svg');
+}
+
+#release {
+  &::before {
+    content: url('./ship.svg');
+  }
+}

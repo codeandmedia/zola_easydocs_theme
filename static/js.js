@@ -142,11 +142,12 @@ function toggleSearchMode() {
   if ($searchContainer.classList.contains("search-container--is-visible")) {
     $searchContainer.classList.remove("search-container--is-visible");
     $wrapContent.style.display = "";
-    $searchIcon.className = "ms-Icon--Search";
+    $searchIcon.className = "my-search";
   } else {
     $searchContainer.classList.add("search-container--is-visible");
     $wrapContent.style.display = "none";
-    $searchIcon.className = "ms-Icon--ChromeClose";
+    // $searchIcon.className = "ms-Icon--ChromeClose";
+    $searchIcon.className = "my-close";
     document.getElementById("search").focus();
   }
 }
@@ -229,10 +230,12 @@ function burger() {
 
   if (x.style.display === "block") {
     x.style.display = "none";
-    y.className = "ms-Icon--GlobalNavButton";
+    y.className = "my-menu";
+    // y.className = "ms-Icon--GlobalNavButton";
   } else {
     x.style.display = "block";
-    y.className = "ms-Icon--ChromeClose";
+    y.className = "my-close";
+    // y.className = "ms-Icon--ChromeClose";
   }
 }
 
