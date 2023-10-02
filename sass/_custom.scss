@@ -1,13 +1,21 @@
 // Write your custom CSS here
 
 .navigated {
-  // margin: 0 auto;
+  display: inline-block;
   max-width: 300px;
-  width: 15%;
+  margin: 0 auto;
+  width: 20%;
 }
 
 .articled {
-  // margin: 0 auto;
+  display: inline-block;
   max-width: 800px;
-  width: 75%;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.mained {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 80%;
 }
