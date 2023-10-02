@@ -1,11 +1,12 @@
 base_url = "https://semanticdata.github.io/zola-docs"
 title = "Zola Docs"
+description = "An easy way to document your projects."
 compile_sass = true
 build_search_index = true
 
 [markdown]
 highlight_code = true
-highlight_theme = "base16-ocean-light"
+highlight_theme = "zenburn"
 
 [extra]
 logo = "https://easydocs.codeandmedia.com/logo.svg"
