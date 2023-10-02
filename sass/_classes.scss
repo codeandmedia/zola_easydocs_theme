@@ -1,0 +1,118 @@
+.my-search {
+  &::before {
+    content: url("./search.svg");
+  }
+}
+
+.my-close {
+  &::before {
+    content: url("./close.svg");
+  }
+}
+
+.my-menu {
+  &::before {
+    content: url("./menu.svg");
+  }
+}
+
+.tree-toggle-label {
+  &::before {
+    content: url("./chevron-right.svg");
+  }
+}
+
+.subtree li {
+  &::before {
+    content: url("./file.svg");
+  }
+}
+
+.tree-toggle:checked + .tree-toggle-label::before {
+  content: url("./chevron-right.svg");
+}
+
+.subtree {
+  overflow: hidden;
+  margin: calc(#{$baseline} / 8) 0;
+  transition: overflow 0.2s ease-in-out;
+  padding: 0;
+}
+
+.tree-toggle-label {
+  user-select: none;
+  cursor: pointer;
+}
+
+.tree-toggle-label::before {
+  display: inline-block;
+  // content: "\003F";
+  // font-family: "FabricMDL2Icons";
+  font-size: 0.75rem;
+  transform: rotate(0deg);
+  transform-origin: 50% 50% 0px;
+  transition: transform 0.1s linear 0s;
+  margin-right: 2px;
+}
+
+.tree-toggle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.tree-toggle:checked + .tree-toggle-label::before {
+  font-size: 0.75rem;
+  transform: rotate(90deg);
+  transform-origin: 50% 50% 0px;
+  transition: transform 0.1s linear 0s;
+  margin-right: 2px;
+}
+
+.tree-toggle:checked + .tree-toggle-label {
+  font-weight: bold;
+}
+
+.tree-toggle + .tree-toggle-label + .subtree {
+  animation-name: slideOut;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+}
+
+.tree-toggle:checked + .tree-toggle-label + .subtree {
+  animation-name: slideIn;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+}
+
+.subtree li {
+  list-style-type: none;
+  margin-left: $baseline;
+
+  a {
+    color: $color;
+  }
+
+  &::before {
+    font-size: 0.75rem;
+  }
+}
+
+.active a {
+  font-weight: bold;
+}
+
+.copy-code-button {
+  display: none;
+  background: $background;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  animation: fade-in 0.3s ease-in-out;
+  font-size: $baseline;
+  color: $color;
+  z-index: 10;
+  position: absolute;
+  top: $baseline;
+  right: $baseline;
+}

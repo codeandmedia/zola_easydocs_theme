@@ -1,0 +1,47 @@
+#release {
+  &::before {
+    content: url("./ship.svg");
+  }
+}
+
+#mobile {
+  display: none;
+}
+
+#trees {
+  overflow-y: auto;
+  height: 80%;
+}
+
+#toc {
+  margin-left: calc(#{$baseline} + #{$font-size});
+  padding: 0;
+  margin: 0 0 0 $baseline;
+  font-size: 80%;
+
+  li {
+    color: $color;
+    margin-left: $font-size;
+
+    &::before {
+      display: inline-block;
+      // content: ('./chevron-right.svg');
+    }
+
+    ul {
+      padding: 0;
+    }
+  }
+}
+
+#release {
+  text-align: left;
+  margin: $baseline 0;
+
+  &::before {
+    display: inline-block;
+    // content: "\EE2E";
+    // font-family: "FabricMDL2Icons";
+    margin-right: calc(#{$baseline} / 8);
+  }
+}
