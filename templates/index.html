@@ -40,7 +40,7 @@
         {% endif -%}
 
         {%- block nav -%}
-        <nav>
+        <nav class="navigated">
             {% if config.extra.logo -%}
             {% set _logo = config.extra.logo -%}
             {% if (_logo is starting_with("http")) == false -%}
@@ -135,7 +135,7 @@
         </nav>
         {% endblock nav -%}
 
-        <article>
+        <article class="articled">
 
             {% if config.build_search_index -%}
             <div id="on_right">

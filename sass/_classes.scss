@@ -1,3 +1,7 @@
+.anchor {
+  content: url("./link.svg");
+}
+
 .my-search {
   &::before {
     content: url("./search.svg");
@@ -46,8 +50,6 @@
 
 .tree-toggle-label::before {
   display: inline-block;
-  // content: "\003F";
-  // font-family: "FabricMDL2Icons";
   font-size: 0.75rem;
   transform: rotate(0deg);
   transform-origin: 50% 50% 0px;
