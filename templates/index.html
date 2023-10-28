@@ -95,8 +95,8 @@
 
                                     {# Output headers if above threshold #}
                                     {% if not config.extra.easydocs_heading_threshold -%}
-                                        {# Undefined or 0 unable to find a way to differnciate between 0 and undefined.
-                                         1 is already including any headings so is not 0 not needed #}
+                                        {# Undefined or 0 unable to find a way to differentiate between 0 and undefined.
+                                            1 is already including any headings so 0 is not needed #}
                                         {% set _threshold = 5 -%}
                                     {% else %}
                                         {% set _threshold = config.extra.easydocs_heading_threshold -%}
