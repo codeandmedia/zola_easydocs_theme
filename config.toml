@@ -1,4 +1,4 @@
-base_url = "https://semanticdata.github.io/zola-docs"
+base_url = "https://miguelpimentel.do/zola-docs/"
 title = "Zola Docs"
 description = "An easy way to document your projects."
 compile_sass = true
