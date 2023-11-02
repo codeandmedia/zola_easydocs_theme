@@ -68,7 +68,7 @@ Depending on how you added your theme, Travis may not know how to access
 it. The best way to ensure that it will have full access to the theme is to use git
 submodules. When doing this, ensure that you are using the `https` version of the URL.
 
-```shell
+```bash
 git submodule add {THEME_URL} themes/{THEME_NAME}
 ```
 
