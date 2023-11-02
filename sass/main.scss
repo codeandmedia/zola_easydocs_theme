@@ -1,7 +1,23 @@
-@import "variables";
-@import "animate";
-@import "classes";
-@import "ids";
-@import "base";
-@import "search";
-@import "custom";
+/* Sitewide variables */
+$baseline: 1.5rem;
+$background: #f9f9f9;
+$color: #222;
+$links: magenta; // #00f
+$hover-links: #c00;
+$visited-links: #009;
+$font-size: 1.125rem;
+$font-family: Segoe UI, system-ui, -apple-system, sans-serif;
+$line-height: 1.75;
+$code_font: 400 1.125rem/1.75 SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+$quote-bg: #dcdcdc;
+$quote-border: #808080 8px solid;
+
+/* Import other SCS stylesheets */
+@import
+"animate",
+"classes",
+"ids",
+"base",
+"search",
+"custom"
+;

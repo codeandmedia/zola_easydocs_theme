@@ -1,39 +1,39 @@
 .anchor {
-  content: url("./link.svg");
+  content: url("./svg/link.svg");
 }
 
 .my-search {
   &::before {
-    content: url("./search.svg");
+    content: url("./svg/search.svg");
   }
 }
 
 .my-close {
   &::before {
-    content: url("./close.svg");
+    content: url("./svg/close.svg");
   }
 }
 
 .my-menu {
   &::before {
-    content: url("./menu.svg");
+    content: url("./svg/menu.svg");
   }
 }
 
 .tree-toggle-label {
   &::before {
-    content: url("./chevron-right.svg");
+    content: url("./svg/chevron-right.svg");
   }
 }
 
 .subtree li {
   &::before {
-    content: url("./file.svg");
+    content: url("./svg/file.svg");
   }
 }
 
 .tree-toggle:checked + .tree-toggle-label::before {
-  content: url("./chevron-right.svg");
+  content: url("./svg/chevron-right.svg");
 }
 
 .subtree {

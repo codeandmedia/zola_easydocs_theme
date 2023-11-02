@@ -13,7 +13,7 @@ When a site template and a theme template have the same path, for example `templ
 
 If you don't want to replace a whole template, but override parts of it, you can [extend the template](https://tera.netlify.app/docs/#inheritance) and redefine some specific blocks. For example, if you want to override the `title` block in your theme's page.html, you can create a page.html file in your site templates with the following content:
 
-```
+```html
 {% extends "theme_name/templates/page.html" %}
 {% block title %}{{ page.title }}{% endblock %}
 ```

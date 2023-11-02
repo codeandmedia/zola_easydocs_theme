@@ -268,7 +268,7 @@ The `bibtex` format loads data into a structure matching the format used by the
 [nom-bibtex crate](https://crates.io/crates/nom-bibtex). The following is an example of data
 in bibtex format:
 
-```
+```css
 @preamble{"A bibtex preamble" # " this is."}
 
 @Comment{

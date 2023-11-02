@@ -14,9 +14,3 @@ This theme for [Zola](https://getzola.org) (static site engine) helps you build 
 4. Almost done. Now, you should decide how you want to build and where will be hosted your website. You can build it locally and upload to somewhere. Or build in GitHub Actions and host on GitHub Pages / Netlify / CloudFlare Pages / AnyS3CloudStorage. [Howto for GitHub Pages](https://www.getzola.org/documentation/deployment/github-pages/).
 
 Enjoy your docs!
-
-## Acknowledgements and Attributions
-
-* Icons: [UXWing](https://uxwing.com/license/).
-* Core: [Easy Docs](https://github.com/codeandmedia/zola_easydocs_theme) theme for [Zola](https://www.getzola.org).
-* Copy-code-button: [Aaron Luna](https://aaronluna.dev/blog/add-copy-button-to-code-blocks-hugo-chroma/).

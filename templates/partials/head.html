@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<meta name="description" content="An easy way to document your projects.">
+<link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
+{% if config.extra.favicon -%}
+{% set _favicon = config.extra.favicon -%}
+{% if (_favicon is starting_with("http")) == false -%}
+{% set _favicon = get_url(path=config.extra.favicon) -%}
+{% endif -%}
+<link rel="icon" href="{{ _favicon | safe }}">
+{% endif -%}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -42,7 +42,7 @@ static/js/site.js -> replace themes/simple-blog/static/js/site.js
 You can also choose to only override parts of a page if a theme defines some blocks by extending it. If we wanted
 to only change a single block from the `post.html` page in the example above, we could do the following:
 
-```
+```html
 {% extends "simple-blog/templates/pages/post.html" %}
 
 {% block some_block %}

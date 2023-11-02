@@ -22,7 +22,7 @@ interpreted as plain text.
 
 Here is a full list of supported languages and their short names:
 
-```
+```md
 - ActionScript -> ["as"]
 - Advanced CSV -> ["csv", "tsv"]
 - AppleScript -> ["applescript", "script editor"]
@@ -153,7 +153,7 @@ Alternatively, the `extra_syntaxes` configuration option can be used to add addi
 
 If your site source is laid out as follows:
 
-```
+```txt
 .
 ├── config.toml
 ├── content/

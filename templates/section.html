@@ -1,12 +1,15 @@
 {% extends "index.html" %}
 
-{% block title %} {{ config.title }} | {{ section.title }} {% endblock title %}
+{% block title %}
+{{ config.title }} | {{ section.title }}
+{% endblock title %}
 
 {% block content %}
+
 {% if section.word_count > 0 -%}
 {{ section.content | safe }}
 {% else -%}
-<h2 class="title"> {{ section.title }} </h2>
+<h2 class="title">{{ section.title }}</h2>
 
 {% if section.subsections -%}
 <h3>Subsections:</h3>

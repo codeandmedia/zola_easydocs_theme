@@ -74,7 +74,7 @@ then linking to these image files on your website. For maintainability, you want
 the spreadsheet in the same directory as the Markdown file, but you don't want to copy the spreadsheet to
 the public web site. You can achieve this by setting `ignored_content` in the config file:
 
-```
+```toml
 ignored_content = ["*.xlsx"]
 ```
 

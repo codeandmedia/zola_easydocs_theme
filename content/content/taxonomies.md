@@ -24,7 +24,7 @@ Then at build time Zola can create pages for each taxonomy listing all of the kn
 
 Imagine again we have the following movies:
 
-```
+```md
 - Shape of water                   <--- Value
   - Director                         <--- Taxonomy
     - Guillermo Del Toro                 <--- Term

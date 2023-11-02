@@ -49,7 +49,7 @@ The output path for the page will first be read from the `slug` key in the page'
 
 **Example:** (file `content/zines/mlf-kurdistan.md`)
 
-```
+```toml
 +++
 title = "Le mouvement des Femmes Libres, à la tête de la libération kurde"
 slug = "femmes-libres-libération-kurde"
@@ -146,7 +146,7 @@ template = "page.html"
 You can ask Zola to create a summary if, for example, you only want to show the first
 paragraph of the page content in a list.
 
-To do so, add <code>&lt;!-- more --&gt;</code> in your content at the point
+To do so, add `&lt;!-- more --&gt;` in your content at the point
 where you want the summary to end. The content up to that point will be
 available separately in the
 [template](@/templates/pages-sections.md#page-variables).

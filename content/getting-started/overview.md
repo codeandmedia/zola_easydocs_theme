@@ -27,7 +27,7 @@ zola init myblog
 
 You will be asked a few questions.
 
-```
+```bash
 > What is the URL of your site? (https://example.com):
 > Do you want to enable Sass compilation? [Y/n]:
 > Do you want to enable syntax highlighting? [y/N]:

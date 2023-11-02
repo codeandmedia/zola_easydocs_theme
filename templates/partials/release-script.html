@@ -1,0 +1,11 @@
+<script>
+  fetch('{{ config.extra.release | safe }}')
+      .then((response) => {
+          return response.json();
+      })
+      .then((data) => {
+          let release_name = data.name;
+          let html_url = data.html_url;
+          release.innerHTML = `<a href='${html_url}'>${release_name}</a>`;
+      });
+</script>

@@ -6,12 +6,12 @@ build_search_index = true
 
 [markdown]
 highlight_code = true
-highlight_theme = "zenburn"
+highlight_theme = "ayu-light"
 
 [extra]
 logo = "https://easydocs.codeandmedia.com/logo.svg"
 release = "https://api.github.com/repos/getzola/zola/releases/latest"
 favicon = "https://www.getzola.org/favicon.ico"
 easydocs_logo_always_clickable = false
-easydocs_uglyurls = false
 easydocs_heading_threshold = 5
+easydocs_uglyurls = false
