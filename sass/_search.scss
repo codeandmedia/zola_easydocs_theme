@@ -48,9 +48,17 @@
 }
 
 #on_right {
-  display: block;
-  text-align: right;
-  margin-bottom: $baseline;
+    display: block;
+    text-align: right;
+    margin-bottom: $baseline;
+    margin-right: 150px;
+}
+
+#on_right > a {
+    vertical-align: middle;
+    font-size: 10px;
+    position: absolute;
+    padding-left: 25px;
 }
 
 #search-ico {
