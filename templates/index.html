@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ get_url(path="main.css") | safe }}">
+    <link rel="stylesheet" href="{{ get_url(path="main.css", cachebust=true) | safe }}">
+    <meta name="generator" content="Zola">
     {% if config.extra.favicon -%}
         {% set _favicon = config.extra.favicon -%}
         {% if (_favicon is starting_with("http")) == false -%}
@@ -30,20 +31,21 @@
 {% endif -%}
 <main>
     {# Create variable to allow appending index.html at end of links if set in config #}
-    {% if not config.extra.easydocs_uglyurls or config.mode == "serve" or config.mode == "Serve" -%}
+    {% if not config.extra.easydocs_uglyurls -%}
         {% set _ugly_url = "" -%}
     {% else %}
         {% set _ugly_url = "index.html" -%}
     {% endif -%}
 
     {%- block nav -%}
+        {% set current_path_safe = current_path | default(value="") %}
         <nav>
             {% if config.extra.logo -%}
                 {% set _logo = config.extra.logo -%}
                 {% if (_logo is starting_with("http")) == false -%}
                     {% set _logo = get_url(path=config.extra.logo) -%}
                 {% endif -%}
-                {% if current_path == "/" and not config.extra.easydocs_logo_always_clickable -%}
+                {% if current_path_safe == "/" and not config.extra.easydocs_logo_always_clickable -%}
                     <img src="{{ _logo | safe }}" alt="logo"/>
                 {% else -%}
                     <a href="{{ config.base_url }}{{ _ugly_url }}">
@@ -59,7 +61,7 @@
                 <div id="release"></div>
             {% endif -%}
 
-            <a href="javascript:void(0);" onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton"></a>
+            <button onclick="burger()" id="mobile" class="ms-Icon--GlobalNavButton" aria-label="Toggle navigation"></button>
             <div id="trees">
                 {% set section_ = get_section(path="_index.md") -%}
                 {% for p in section_.subsections -%}
@@ -67,19 +69,19 @@
 
 
                     <input class="tree-toggle" type="checkbox" id="{{ subsection.title | slugify }}"
-                           {% if current_path is starting_with(subsection.path) %}checked{% endif %}/>
+                           {% if current_path_safe is starting_with(subsection.path) %}checked{% endif %}/>
                     <label class="tree-toggle-label"
                            for="{{ subsection.title | slugify }}">{{ subsection.title }}</label>
 
                     <ul class="subtree">
                         {% for page in subsection.pages -%}
-                            <li {% if current_path == page.path %}class="active"{% endif %}>
+                            <li {% if current_path_safe == page.path %}class="active"{% endif %}>
                                 <a href="{{ page.permalink | safe }}{{ _ugly_url }}">{{ page.title }}</a>
                             </li>
 
                             {% if page.toc -%}
 
-                                {% if current_path == page.path -%}
+                                {% if current_path_safe == page.path -%}
 
                                     {# Count number of headers on page #}
                                     {% set_global header_count = 0 -%}
@@ -160,10 +162,10 @@
 
 {% if config.build_search_index %}
     <script type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") | safe }}" defer></script>
-    <script type="text/javascript" src="{{ get_url(path="search_index.en.js") | safe }}" defer></script>
+    <script type="text/javascript" src="{{ get_url(path="search_index." ~ lang ~ ".js", cachebust=true) | safe }}" defer></script>
 {% endif -%}
 
-    <script type="text/javascript" src="{{ get_url(path="js.js") | safe }}" defer></script>
+    <script type="text/javascript" src="{{ get_url(path="js.js", cachebust=true) | safe }}" defer></script>
 
 </body>
 </html>

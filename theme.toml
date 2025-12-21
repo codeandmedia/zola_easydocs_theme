@@ -2,7 +2,7 @@ name = "EasyDocs"
 description = "An easy way to create docs for your project"
 license = "MIT"
 homepage = "https://github.com/codeandmedia/zola_easydocs_theme"
-min_version = "0.13.0"
+min_version = "0.21.0"
 demo = "https://easydocs.codeandmedia.com"
 
 [author]

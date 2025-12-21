@@ -325,6 +325,9 @@ article {
     margin:0 $baseline 0 0;
     display: block;
     color:$color;
+    background: transparent;
+    border: none;
+    padding: 0;
   }
 
   #trees {
