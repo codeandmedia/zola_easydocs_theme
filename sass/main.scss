@@ -352,5 +352,60 @@ blockquote {
   padding: 0 20px;
 }
 
+blockquote.markdown-alert-note:before {
+  content: "🔍 Note";
+  font-weight: bold;
+  color: $quote-alert-note-color;
+}
+
+blockquote.markdown-alert-note {
+  border-left-color: $quote-alert-note-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-tip:before {
+  content: "💡 Tip";
+  font-weight: bold;
+  color: $quote-alert-tip-color;
+}
+
+blockquote.markdown-alert-tip {
+  border-left-color: $quote-alert-tip-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-warning:before {
+  content: "⚠️ Warning";
+  font-weight: bold;
+  color: $quote-alert-warning-color;
+}
+
+blockquote.markdown-alert-warning {
+  border-left-color: $quote-alert-warning-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-important:before {
+  content: "📌 Important";
+  font-weight: bold;
+  color: $quote-alert-important-color;
+}
+
+blockquote.markdown-alert-important {
+  border-left-color: $quote-alert-important-color;
+  background-color: $background;
+}
+
+blockquote.markdown-alert-caution:before {
+  content: "☢️ Caution";
+  font-weight: bold;
+  color: $quote-alert-caution-color;
+}
+
+blockquote.markdown-alert-caution {
+  border-left-color: $quote-alert-caution-color;
+  background-color: $background;
+}
+
 @import "fabric-icons-inline";
 @import "search";
