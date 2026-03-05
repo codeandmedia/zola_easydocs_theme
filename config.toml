@@ -4,8 +4,9 @@ compile_sass = true
 build_search_index = true
 
 [markdown]
-highlight_code = true
-highlight_theme = "base16-ocean-light"
+
+[markdown.highlighting]
+theme = "github-light"                                                                                     
 
 [extra]
 logo = "https://easydocs.codeandmedia.com/logo.svg"

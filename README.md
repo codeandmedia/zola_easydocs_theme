@@ -13,6 +13,30 @@ As you may have heard Zola is quite flexible :) So, the scenario below is one of
 3. In sass/_variables.scss you may change font, color or background if you want.
 4. Almost done. Now, you should decide how you want to build and where will be hosted your website. You can build it locally and upload to somewhere. Or build in GitHub Actions and host on GitHub Pages / Netlify / CloudFlare Pages / AnyS3CloudStorage. [Howto for GitHub Pages](https://www.getzola.org/documentation/deployment/github-pages/). [My example](https://github.com/o365hq/o365hq.com/blob/main/.github/workflows/main.yml) of GitHub workflow with 2-steps build (the first checks for links and spelling errors, the second uploads to Azure). [Dockerfile](https://github.com/codeandmedia/zola_docsascode_theme/blob/master/Dockerfile) to make Docker image.
 
+## Zola v0.22 update
+
+It seems like for Zola 0.22 config.toml got updated and some fields lost backward compatibility
+
+before: 
+
+```
+[markdown]
+highlight_code = true
+highlight_theme = "base16-ocean-light"
+
+```
+
+now 
+
+```
+[markdown]
+
+[markdown.highlighting]
+theme = "github-light"   
+```
+
+Please, take a look to a version you're using and pick up the proper one config. 
+
 ## Provided configurations options
 
 These options can be configured in the `extra` section of the [config.toml](config.toml).
