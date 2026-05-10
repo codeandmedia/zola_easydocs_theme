@@ -5,7 +5,7 @@ insert_anchor_links = "right"
 
 ## An easy way to create a document library for your project
 
-Demo: [https://easydocs.codeandmedia.com/](https://easydocs.codeandmedia.com/)
+Demo: [https://zola-easydocs-theme.pages.dev/](https://zola-easydocs-theme.pages.dev/)
 
 This theme for [Zola](https://getzola.org) (static site engine) helps you build and publish your project docs easily and fast. Zola is just one binary that outputs html-pages and additional static assets after building your docs written in Markdown. Thus, you can take the theme, your md-files, Zola and gain flexible and simple website for documentation. 
 

@@ -3,7 +3,7 @@ description = "An easy way to create docs for your project"
 license = "MIT"
 homepage = "https://github.com/codeandmedia/zola_easydocs_theme"
 min_version = "0.21.0"
-demo = "https://easydocs.codeandmedia.com"
+demo = "https://zola-easydocs-theme.pages.dev"
 
 [author]
 name = "Roman Soldatenkov"
